@@ -23,8 +23,7 @@
 
 WiFiUDP udpClient;
 
-//#define SYSLOG_SERVER  "192.168.1.55" // MAC
-#define SYSLOG_SERVER  "192.168.1.251" // WIN
+#define SYSLOG_SERVER  "192.168.1.251" // Change IP to reflect syslog server in your environment.
 #define SYSLOG_PORT 514
 #define DEVICE_HOSTNAME mqttNAME
 
@@ -33,8 +32,8 @@ Syslog syslog(udpClient, SYSLOG_SERVER, SYSLOG_PORT, DEVICE_HOSTNAME, LOG_KERN);
 
 void setup() {
   Serial.begin(115200);
-  wifiMqttInit();
-  otaInit();
+  wifiMqttInit();		// Comment if there is no WiFi requirement
+  otaInit();			// Comment if there is no WiFi requirement
   adcInit();
   displayInit();
 
@@ -274,13 +273,13 @@ void sendStatusUpdates() {
 }
 
 void loop() {
-  ArduinoOTA.handle();
+  ArduinoOTA.handle();		// Comment if there is no WiFi requirement
   //syslogDebugLoop();
   adcLoop();
-  sendStatusUpdates();
-  sendIPupdates();
-  client.loop();                  // MQTT Client loop
-    if (!client.connected()) {
-      connectMQTT();
-    }
+  sendStatusUpdates();		// Comment if there is no WiFi requirement
+  sendIPupdates();		// Comment if there is no WiFi requirement
+  client.loop();                // Comment if there is no WiFi requirement
+    if (!client.connected()) {	// Comment if there is no WiFi requirement	
+      connectMQTT();		// Comment if there is no WiFi requirement
+    }				// Comment if there is no WiFi requirement
 } 
