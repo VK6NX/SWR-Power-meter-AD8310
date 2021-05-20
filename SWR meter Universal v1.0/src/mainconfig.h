@@ -22,7 +22,7 @@
 // *************** MQTT related parameters *********************
 const char* mqttHOST = "192.168.1.50";  // MQTT Broker server ip
 
-const char* mqttNAME = "ATU-T";   // Client name that uniquely identify device
+const char* mqttNAME = "TandemTor";   // Client name that uniquely identify device
 
 // *************** ADC related parameters **********************
 
