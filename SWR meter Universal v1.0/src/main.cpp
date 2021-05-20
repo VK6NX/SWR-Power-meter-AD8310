@@ -239,13 +239,13 @@ void displaydBm(){
 }
 
 void mqttMessagesPwrSwr(){
-  client.publish("TandemTor/swr", String(valueSWR).c_str());
-  client.publish("TandemTor/fwd", String(fwdVoltageADS0, 0).c_str());
-  client.publish("TandemTor/rev", String(refVoltageADS1, 0).c_str());
-  client.publish("TandemTor/fwdPwrVal", String(fwdPwrVal, 0).c_str());
-  client.publish("TandemTor/fwdPwrValmW", String(fwdPwrVal, 4).c_str());
-  client.publish("TandemTor/refPwrVal", String(refPwrVal, 0).c_str());
-  client.publish("TandemTor/dBm FWD",String(pwrdBmFWD, 1).c_str());
+  client.publish("TandemTor/SWR", String(valueSWR).c_str());			// Calculated SWR
+  client.publish("TandemTor/fwd_mV", String(fwdVoltageADS0, 0).c_str());	// raw FWD in mV from Tandem
+  client.publish("TandemTor/ref_mV", String(refVoltageADS1, 0).c_str());	// raw REF in mV from Tandem
+  client.publish("TandemTor/fwdPwr_W", String(fwdPwrVal, 0).c_str());		// calculated FWD Power in Watts
+  client.publish("TandemTor/fwdPwrVal_mW", String(fwdPwrVal, 4).c_str());	// calculated FWD Power in millWiatts
+  client.publish("TandemTor/refPwr_W", String(refPwrVal, 0).c_str());		// calculated REF Power in Watts
+  client.publish("TandemTor/dBm FWD",String(pwrdBmFWD, 1).c_str());		// calculated FWD Power in dBm
 }
 
 void sendIPupdates() {
