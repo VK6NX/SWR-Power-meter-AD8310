@@ -7,6 +7,7 @@
  * 
  *
  * tftdisplay.h  
+ * Requires TFT display based on ST77xx chip.
  *
  */
 
@@ -17,7 +18,7 @@
 #include <Adafruit_ST7735.h>              // Hardware-specific library for ST7735
 #include <Adafruit_ST7789.h>              // Hardware-specific library for ST7789
 
-#define TFT_RST       15               // TFT display pin RST
+#define TFT_RST       15              // TFT display pin RST
 #define TFT_DC        17              // TFT display pin DC
 #define TFT_CS        16              // TFT display pin CS
 
