@@ -41,7 +41,6 @@ inline void adcInit() {
 
 
 inline void adcLoop() {
-  //if (!adc.isBusy()) {
   if (digitalRead(alertReadyPin) != HIGH) {
     if (adcChannel == ADS1115_COMP_0_GND){
       fwdVoltageADS0 = adc.getResult_mV();
@@ -57,12 +56,7 @@ inline void adcLoop() {
     adc.setCompareChannels(adcChannel);
     adc.clearAlert();
     adc.startSingleMeasurement();
-//    if (fwdVoltageADS0 > interceptFwd){
      rflPwrPercent = (refVoltageADS1 / fwdVoltageADS0);
-//    }
-//    else{
-//     rflPwrPercent = 0;
-//    }
     adcCnt++; 
   }
 }
