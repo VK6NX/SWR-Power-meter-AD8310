@@ -23,9 +23,9 @@
 
 WiFiUDP udpClient;
 
-#define SYSLOG_SERVER  "192.168.1.251" // Change IP to reflect syslog server in your environment.
-#define SYSLOG_PORT 514
-#define DEVICE_HOSTNAME mqttNAME
+#define SYSLOG_SERVER  "192.168.1.251"  // Change IP to reflect syslog server in your environment. Comment if there is not WiFi
+#define SYSLOG_PORT 514			// Change to reflect syslog server in your environment. Comment if there is not WiFi
+#define DEVICE_HOSTNAME mqttNAME	// Comment if there is not WiFi
 
 Syslog syslog(udpClient, SYSLOG_SERVER, SYSLOG_PORT, DEVICE_HOSTNAME, LOG_KERN);
 
