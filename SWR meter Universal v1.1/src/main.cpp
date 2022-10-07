@@ -26,7 +26,7 @@
 
 WiFiUDP udpClient;
 
-//#define SYSLOG_SERVER  "IP ADDR" // Replace
+//#define SYSLOG_SERVER  "192.168.AA.BB" // Replace
 //#define SYSLOG_PORT 514
 //#define DEVICE_HOSTNAME mqttNAME
 
